@@ -1,0 +1,12 @@
+node{
+    stage('build'){
+        sh 'python3 -V'
+    }
+    stage('test'){
+        git branch:'main', url: 'https://github.com/carlos1433/devops-as1.git'
+        sh 'python3 src/hello.py'
+    }
+    stage('deploy'){
+        echo "done"
+    }
+}
